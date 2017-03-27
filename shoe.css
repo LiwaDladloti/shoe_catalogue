@@ -1,0 +1,27 @@
+body {
+    background: radial-gradient(white, black)
+}
+#head {
+    text-align: center;
+    background: radial-gradient(#cec6c6, white);
+    font-family: Roboto;
+}
+h1 {
+    font-size: 72px;
+}
+#slideShow {
+    text-align: center;
+    background: radial-gradient(#c1b8b8, white);
+    margin-left: 8em;
+    margin-right: 8em;
+}
+#slideShow img{
+    transition: width 1s, height 1s;
+}
+#slideShow img:hover {
+    width: 400px;
+    height: 375px;
+}
+.slides {
+    display: none;
+}
