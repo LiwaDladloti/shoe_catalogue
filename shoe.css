@@ -1,5 +1,5 @@
 body {
-    background: radial-gradient(white, black)
+    background: radial-gradient(white, black);
 }
 #head {
     text-align: center;
@@ -24,4 +24,20 @@ h1 {
 }
 .slides {
     display: none;
+}
+#page {
+    background: radial-gradient(#b19393, white); 
+    margin-left: 8em;
+    margin-right: 8em;
+    text-align: center;
+    margin-top: 2em;
+    padding-bottom: 2em;
+    padding-top: 1em;
+}
+input {
+    text-align: center;
+    font-size: 18px;
+}
+hr {
+    visibility: hidden;
 }
