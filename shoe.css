@@ -3,17 +3,20 @@ body {
 }
 #head {
     text-align: center;
-    background: radial-gradient(#cec6c6, white);
+    background: radial-gradient(#cec6c6, rgba(255, 255, 255, 0.8));
     font-family: Roboto;
+    position: fixed;
+    width: 100%;
+    
 }
 h1 {
-    font-size: 72px;
+    font-size: 50px;
 }
 #slideShow {
     text-align: center;
     background: radial-gradient(#c1b8b8, white);
-    margin-left: 8em;
-    margin-right: 8em;
+    width: 100%;
+    margin-top: 12em;
 }
 #slideShow img{
     transition: width 1s, height 1s;
@@ -31,7 +34,7 @@ h1 {
     margin-right: 8em;
     text-align: center;
     margin-top: 2em;
-    padding-bottom: 2em;
+    padding-bottom: 5em;
     padding-top: 1em;
 }
 input {
