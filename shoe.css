@@ -1,5 +1,6 @@
 body {
     background: radial-gradient(white, black) no-repeat;
+    height: 100%;
 }
 #head {
     text-align: center;
@@ -7,7 +8,7 @@ body {
     font-family: Roboto;
     position: fixed;
     width: 100%;
-    
+    top: 0;
 }
 h1 {
     font-size: 50px;
@@ -43,4 +44,19 @@ input {
 }
 hr {
     visibility: hidden;
+}
+#stockInfo {
+    margin-top: 2em;
+    background: radial-gradient(silver, white);
+}
+table, td, th {    
+    border: 1px solid #ddd;
+    text-align: left;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+th, td {
+    padding: 15px;
 }
