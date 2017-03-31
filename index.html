@@ -5,8 +5,30 @@
             LIWA MEN - Shoes
         </title>
         <link rel = 'stylesheet' type = 'text/css' href = 'shoe.css'>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
     </head>
 <body>
+    <script type="text/x-handlebars-template" class = 'stockTemplate'>
+        <table>
+            <thead>
+                <th>Shoe type</th>
+                <th>Shoe colour</th>
+                <th>Shoe size</th>
+                <th>Quantity in stock</th>
+                <th>Shoe price</th>
+            </thead>
+            {{#each stockList}}
+            <tbody>
+                <td>{{shoeType}}</td>
+                <td>{{shoeColour}}</td>
+                <td>{{shoeSize}}</td>
+                <td>{{quantityInStock}}</td>
+                <td>{{shoePrice}}</td>
+            </tbody>
+            {{/each}}
+        </table>
+    </script>
+    
 <div id = 'head'>
     <h1> LIWA MEN </h1>
     <h4> IT'S NEVER JUST A SHOE</h4>
@@ -20,104 +42,32 @@
 </div>
 <div id = 'page'>
     <h3>Select shoe type:</h3>
-    <input type = 'text' list = 'brands' placeholder = 'Shoe type'>
+    <input type = 'text' list = 'brands' placeholder = 'Shoe type' id = 'shoeDrop'>
     <datalist id = 'brands'>
-    <option>Monk strap</option>
-    <option>Loafer</option>
-    <option>Brogue & Wingtips</option>
+    <option name = 'types'>Monk strap</option>
+    <option name = 'types'>Loafer</option>
+    <option name = 'types'>Brogue & Wingtips</option>
     </datalist>
     <h3>Select shoe colour:</h3>
-    <input type = 'text' list = 'colours' placeholder = 'Colour of shoe'>
+    <input type = 'text' list = 'colours' placeholder = 'Colour of shoe' id = 'colourDrop'>
     <datalist id = 'colours'>
-    <option>Brown Shoe</option>
-    <option>Black Shoe</option>
-    <option>Navy Shoe</option>
+    <option name = 'colours'>Brown Shoe</option>
+    <option name = 'colours'>Black Shoe</option>
+    <option name = 'colours'>Navy Shoe</option>
     </datalist>
     
     <h3>Select shoe size:</h3>
-    <input type = 'text' list = 'sizes' placeholder = 'Size of shoe'>
+    <input type = 'text' list = 'sizes' placeholder = 'Size of shoe' id = 'sizeDrop'>
     <datalist id = 'sizes'>
-    <option>Size 6</option>
-    <option>Size 7</option>
-    <option>Size 8</option>
-    <option>Size 9</option>
+    <option name = 'sizes'>Size 6</option>
+    <option name = 'sizes'>Size 7</option>
+    <option name = 'sizes'>Size 8</option>
+    <option name = 'sizes'>Size 9</option>
     </datalist>
     <hr>
-    <button id = 'orderBtn'> Check Stock! </button>
+    <button id = 'orderBtn' onclick="checkShoes()"> Check Stock! </button>
 </div>
 <div id = 'stockInfo'>
-    <table>
-  <tr>
-    <th>Shoe type</th>
-    <th>Shoe colour</th>
-    <th>Shoe size</th>
-    <th>Quantity in stock</th>
-    <th>Shoe price</th>
-  </tr>
-  <tr>
-    <td>Monk Strap</td>
-    <td>Brown</td>
-    <td>6</td>
-    <td>15</td>
-    <td>R1 200.00</td>
-  </tr>
-  <tr>
-    <td>Loafer</td>
-    <td>Brown</td>
-    <td>7</td>
-    <td>7</td>
-    <td>R1 759.99</td>
-  </tr>
-  <tr>
-    <td>Brogue & Wingtips</td>
-    <td>Brown</td>
-    <td>7</td>
-    <td>9</td>
-    <td>R1 200.00</td>
-  </tr>
-  <tr>
-    <td>Monk Strap</td>
-    <td>Black</td>
-    <td>8</td>
-    <td>8</td>
-    <td>R1 200.00</td>
-  </tr>
-  <tr>
-    <td>Loafer</td>
-    <td>Black</td>
-    <td>9</td>
-    <td>11</td>
-    <td>R1 759.99</td>
-  </tr>
-  <tr>
-    <td>Brogue & Wingtips</td>
-    <td>Black</td>
-    <td>7</td>
-    <td>4</td>
-    <td>R1 200.00</td>
-  </tr>
-<tr>
-    <td>Monk Strap</td>
-    <td>Navy</td>
-    <td>6</td>
-    <td>3</td>
-    <td>R1 900.00</td>
-  </tr>
-  <tr>
-    <td>Loafer</td>
-    <td>Navy</td>
-    <td>8</td>
-    <td>6</td>
-    <td>R1 759.99</td>
-  </tr>
-  <tr>
-    <td>Brogue & Wingtips</td>
-    <td>Navy</td>
-    <td>7</td>
-    <td>12</td>
-    <td>R1 200.00</td>
-  </tr>
-</table>
     
 </div>
     
