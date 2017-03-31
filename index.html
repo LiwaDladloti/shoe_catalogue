@@ -29,6 +29,27 @@
         </table>
     </script>
     
+    <script type="text/x-handlebars-template" class = 'stockAll'>
+        <table>
+            <thead>
+                <th>Shoe type</th>
+                <th>Shoe colour</th>
+                <th>Shoe size</th>
+                <th>Quantity in stock</th>
+                <th>Shoe price</th>
+            </thead>
+            {{#each dataList}}
+            <tbody>
+                <td>{{shoeType}}</td>
+                <td>{{shoeColour}}</td>
+                <td>{{shoeSize}}</td>
+                <td>{{quantityInStock}}</td>
+                <td>{{shoePrice}}</td>
+            </tbody>
+            {{/each}}
+        </table>
+    </script>
+    
 <div id = 'head'>
     <h1> LIWA MEN </h1>
     <h4> IT'S NEVER JUST A SHOE</h4>
@@ -70,6 +91,8 @@
     </datalist>
     <hr>
     <button id = 'orderBtn' onclick="checkShoes()"> Check Stock! </button>
+    <hr/>
+    <button id = 'showAll' onclick="showAllStock()"> Show all stock! </button>
 </div>
 <div id = 'stockInfo'>
     

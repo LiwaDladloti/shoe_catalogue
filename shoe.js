@@ -71,3 +71,10 @@ if(shoeDrop === types[0].textContent && colourDrop === colours[0].textContent &&
         document.getElementById('stockInfo').innerHTML = '<h1> No stock!!</h1>'
     }
 }
+
+var stockAll = document.querySelector('.stockAll').innerHTML;
+var template = Handlebars.compile(stockAll);
+
+function showAllStock() {
+    document.getElementById('stockInfo').innerHTML = template({dataList: shoeList});
+}
