@@ -1,7 +1,6 @@
 var slider = 0;
 imgSlide();
 
-
 var shoeList = [
         {
             shoeType : 'Monk Strap',
@@ -52,7 +51,6 @@ var temp = Handlebars.compile(stockTemplate);
 
 function checkShoes() {
     
-    
     var shoeDrop = document.getElementById('shoeDrop').value;
     var colourDrop = document.getElementById('colourDrop').value;
     var sizeDrop = document.getElementById('sizeDrop').value;
@@ -60,7 +58,6 @@ function checkShoes() {
     var types = document.getElementsByName('types');
     var colours = document.getElementsByName('colours');
     var sizes = document.getElementsByName('sizes');
-    
     
 if(shoeDrop === types[0].textContent && colourDrop === colours[0].textContent && sizeDrop === sizes[0].textContent){
         document.getElementById('stockInfo').innerHTML = temp(shoeList[0]);
@@ -71,7 +68,6 @@ if(shoeDrop === types[0].textContent && colourDrop === colours[0].textContent &&
     } else if (shoeDrop === types[1].textContent && colourDrop === colours[0].textContent && sizeDrop === sizes[0].textContent){
         document.getElementById('stockInfo').innerHTML = temp(shoeList[3]);
     } else {
-        document.getElementById('stockInfo').innerHTML = '<h3> No stock!!</h03>'
+        document.getElementById('stockInfo').innerHTML = '<h1> No stock!!</h1>'
     }
-    
 }
