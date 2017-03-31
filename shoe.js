@@ -8,28 +8,28 @@ var shoeList = [
             shoeColour : 'Brown',
             shoeSize : '6',
             quantityInStock : '15',
-            shoePrice : 'R1 200.00',
+            shoePrice : 'R1 200.00'
         },
         {
             shoeType : 'Monk Strap',
             shoeColour : 'Black',
             shoeSize : '6',
             quantityInStock : '9',
-            shoePrice : 'R1 200.00',
+            shoePrice : 'R1 200.00'
         },
         {
             shoeType : 'Monk Strap',
             shoeColour : 'Navy',
             shoeSize : '6',
             quantityInStock: '7',
-            shoePrice : 'R1 200.00',
+            shoePrice : 'R1 200.00'
         },
         {
             shoeType : 'Loafer',
             shoeColour : 'Brown',
             shoeSize : '6',
             quantityInStock: '5',
-            shoePrice : 'R1 200.00',
+            shoePrice : 'R1 200.00'
         }
     ]
 
@@ -58,19 +58,20 @@ function checkShoes() {
     var sizeDrop = document.getElementById('sizeDrop').value;
     
     var types = document.getElementsByName('types');
-    console.log(types)
-    var colours = document.getElementsByName('colours').selectedIndex;
-    var sizes = document.getElementsByName('sizes').selectedIndex;
+    var colours = document.getElementsByName('colours');
+    var sizes = document.getElementsByName('sizes');
     
-    //var data = temp({stockList: shoeList});
-    //console.log(data)
     
-    var emptyArray = [];
-    for(var i=0; i < shoeList.length; i++){
-        if(shoeList[i].shoeType === types[0].textContent){
-            emptyArray.push(shoeList[i]);
-        }
+if(shoeDrop === types[0].textContent && colourDrop === colours[0].textContent && sizeDrop === sizes[0].textContent){
+        document.getElementById('stockInfo').innerHTML = temp(shoeList[0]);
+    } else if (shoeDrop === types[0].textContent && colourDrop === colours[1].textContent && sizeDrop === sizes[0].textContent){
+        document.getElementById('stockInfo').innerHTML = temp(shoeList[1]);
+    } else if (shoeDrop === types[0].textContent && colourDrop === colours[2].textContent && sizeDrop === sizes[0].textContent){
+        document.getElementById('stockInfo').innerHTML = temp(shoeList[2]);
+    } else if (shoeDrop === types[1].textContent && colourDrop === colours[0].textContent && sizeDrop === sizes[0].textContent){
+        document.getElementById('stockInfo').innerHTML = temp(shoeList[3]);
+    } else {
+        document.getElementById('stockInfo').innerHTML = '<h3> No stock!!</h03>'
     }
     
-    document.getElementById('stockInfo').innerHTML = temp({stockList: emptyArray});;
 }
