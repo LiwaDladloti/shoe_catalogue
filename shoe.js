@@ -64,8 +64,7 @@ var shoeList = [
             shoeSize : '6',
             quantityInStock: '4',
             shoePrice : 'R989.99'
-        },
-        
+        }        
     ]
 
 function imgSlide() {
@@ -123,4 +122,24 @@ var template = Handlebars.compile(stockAll);
 
 function showAllStock() {
     document.getElementById('stockInfo').innerHTML = template({dataList: shoeList});
+}
+
+var pushHere = [];
+function addStock() {
+    var newShoe = document.getElementById('newShoe');
+    var newColour = document.getElementById('newColour');
+    var newSize = document.getElementById('newSize');
+    var newQuantity = document.getElementById('newQuantity');
+    var newPrice = document.getElementById('newPrice');
+    
+    var newList =   {
+                    shoeType : newShoe.value,
+                    shoeColour : newColour.value,
+                    shoeSize : newSize.value,
+                    quantityInStock: newQuantity.value,
+                    shoePrice : newPrice.value
+                    }
+    
+    newList = pushHere
+    shoeList.push(pushHere);
 }
