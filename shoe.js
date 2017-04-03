@@ -28,8 +28,44 @@ var shoeList = [
             shoeColour : 'Brown',
             shoeSize : '6',
             quantityInStock: '5',
-            shoePrice : 'R1 200.00'
-        }
+            shoePrice : 'R850.00'
+        },
+        {
+            shoeType : 'Loafer',
+            shoeColour : 'Black',
+            shoeSize : '6',
+            quantityInStock: '3',
+            shoePrice : 'R850.00'
+        },
+        {
+            shoeType : 'Loafer',
+            shoeColour : 'Navy',
+            shoeSize : '6',
+            quantityInStock: '7',
+            shoePrice : 'R850.00'
+        },
+        {
+            shoeType : 'Brogue & Wingtips',
+            shoeColour : 'Brown',
+            shoeSize : '6',
+            quantityInStock: '7',
+            shoePrice : 'R989.99'
+        },
+        {
+            shoeType : 'Brogue & Wingtips',
+            shoeColour : 'Black',
+            shoeSize : '6',
+            quantityInStock: '1',
+            shoePrice : 'R989.99'
+        },
+        {
+            shoeType : 'Brogue & Wingtips',
+            shoeColour : 'Navy',
+            shoeSize : '6',
+            quantityInStock: '4',
+            shoePrice : 'R989.99'
+        },
+        
     ]
 
 function imgSlide() {
@@ -67,6 +103,16 @@ if(shoeDrop === types[0].textContent && colourDrop === colours[0].textContent &&
         document.getElementById('stockInfo').innerHTML = temp(shoeList[2]);
     } else if (shoeDrop === types[1].textContent && colourDrop === colours[0].textContent && sizeDrop === sizes[0].textContent){
         document.getElementById('stockInfo').innerHTML = temp(shoeList[3]);
+    } else if (shoeDrop === types[1].textContent && colourDrop === colours[1].textContent && sizeDrop === sizes[0].textContent){
+        document.getElementById('stockInfo').innerHTML = temp(shoeList[4]);
+    } else if (shoeDrop === types[1].textContent && colourDrop === colours[2].textContent && sizeDrop === sizes[0].textContent){
+        document.getElementById('stockInfo').innerHTML = temp(shoeList[5]);
+    } else if (shoeDrop === types[2].textContent && colourDrop === colours[0].textContent && sizeDrop === sizes[0].textContent){
+        document.getElementById('stockInfo').innerHTML = temp(shoeList[6]);
+    } else if (shoeDrop === types[2].textContent && colourDrop === colours[1].textContent && sizeDrop === sizes[0].textContent){
+        document.getElementById('stockInfo').innerHTML = temp(shoeList[7]);
+    } else if (shoeDrop === types[2].textContent && colourDrop === colours[2].textContent && sizeDrop === sizes[0].textContent){
+        document.getElementById('stockInfo').innerHTML = temp(shoeList[8]);
     } else {
         document.getElementById('stockInfo').innerHTML = '<h1> No stock!!</h1>'
     }
