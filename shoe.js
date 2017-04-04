@@ -140,6 +140,6 @@ function addStock() {
                     shoePrice : newPrice.value
                     }
     
-    newList = pushHere
+    pushHere = newList;
     shoeList.push(pushHere);
 }
