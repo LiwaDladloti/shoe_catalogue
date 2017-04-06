@@ -4,68 +4,68 @@ imgSlide();
 var shoeList = [
         {
             shoeType : 'Monk Strap',
-            shoeColour : 'Brown',
-            shoeSize : '6',
+            shoeColour : 'Brown Shoe',
+            shoeSize : 'Size 6',
             quantityInStock : '15',
             shoePrice : 'R1 200.00'
         },
         {
             shoeType : 'Monk Strap',
-            shoeColour : 'Black',
-            shoeSize : '6',
+            shoeColour : 'Black Shoe',
+            shoeSize : 'Size 6',
             quantityInStock : '9',
             shoePrice : 'R1 200.00'
         },
         {
             shoeType : 'Monk Strap',
-            shoeColour : 'Navy',
-            shoeSize : '6',
+            shoeColour : 'Navy Shoe',
+            shoeSize : 'Size 6',
             quantityInStock: '7',
             shoePrice : 'R1 200.00'
         },
         {
             shoeType : 'Loafer',
-            shoeColour : 'Brown',
-            shoeSize : '6',
+            shoeColour : 'Brown Shoe',
+            shoeSize : 'Size 6',
             quantityInStock: '5',
             shoePrice : 'R850.00'
         },
         {
             shoeType : 'Loafer',
-            shoeColour : 'Black',
-            shoeSize : '6',
+            shoeColour : 'Black Shoe',
+            shoeSize : 'Size 6',
             quantityInStock: '3',
             shoePrice : 'R850.00'
         },
         {
             shoeType : 'Loafer',
-            shoeColour : 'Navy',
-            shoeSize : '6',
+            shoeColour : 'Navy Shoe',
+            shoeSize : 'Size 6',
             quantityInStock: '7',
             shoePrice : 'R850.00'
         },
         {
             shoeType : 'Brogue & Wingtips',
-            shoeColour : 'Brown',
-            shoeSize : '6',
+            shoeColour : 'Brown Shoe',
+            shoeSize : 'Size 6',
             quantityInStock: '7',
             shoePrice : 'R989.99'
         },
         {
             shoeType : 'Brogue & Wingtips',
-            shoeColour : 'Black',
-            shoeSize : '6',
+            shoeColour : 'Black Shoe',
+            shoeSize : 'Size 6',
             quantityInStock: '1',
             shoePrice : 'R989.99'
         },
         {
             shoeType : 'Brogue & Wingtips',
-            shoeColour : 'Navy',
-            shoeSize : '6',
+            shoeColour : 'Navy Shoe',
+            shoeSize : 'Size 6',
             quantityInStock: '4',
             shoePrice : 'R989.99'
-        }        
-    ]
+        }
+    ];
 
 function imgSlide() {
     'use strict';
@@ -83,45 +83,29 @@ function imgSlide() {
 
 var stockTemplate = document.querySelector('.stockTemplate').innerHTML;
 var temp = Handlebars.compile(stockTemplate);
-
+    
+var types = document.getElementsByName('types');
+var colours = document.getElementsByName('colours');
+var sizes = document.getElementsByName('sizes');
 function checkShoes() {
     
-    var shoeDrop = document.getElementById('shoeDrop').value;
-    var colourDrop = document.getElementById('colourDrop').value;
-    var sizeDrop = document.getElementById('sizeDrop').value;
+var shoeDrop = document.getElementById('shoeDrop').value;
+var colourDrop = document.getElementById('colourDrop').value;
+var sizeDrop = document.getElementById('sizeDrop').value;
+var pushToThis = [];
     
-    var types = document.getElementsByName('types');
-    var colours = document.getElementsByName('colours');
-    var sizes = document.getElementsByName('sizes');
-    
-if(shoeDrop === types[0].textContent && colourDrop === colours[0].textContent && sizeDrop === sizes[0].textContent){
-        document.getElementById('stockInfo').innerHTML = temp(shoeList[0]);
-    } else if (shoeDrop === types[0].textContent && colourDrop === colours[1].textContent && sizeDrop === sizes[0].textContent){
-        document.getElementById('stockInfo').innerHTML = temp(shoeList[1]);
-    } else if (shoeDrop === types[0].textContent && colourDrop === colours[2].textContent && sizeDrop === sizes[0].textContent){
-        document.getElementById('stockInfo').innerHTML = temp(shoeList[2]);
-    } else if (shoeDrop === types[1].textContent && colourDrop === colours[0].textContent && sizeDrop === sizes[0].textContent){
-        document.getElementById('stockInfo').innerHTML = temp(shoeList[3]);
-    } else if (shoeDrop === types[1].textContent && colourDrop === colours[1].textContent && sizeDrop === sizes[0].textContent){
-        document.getElementById('stockInfo').innerHTML = temp(shoeList[4]);
-    } else if (shoeDrop === types[1].textContent && colourDrop === colours[2].textContent && sizeDrop === sizes[0].textContent){
-        document.getElementById('stockInfo').innerHTML = temp(shoeList[5]);
-    } else if (shoeDrop === types[2].textContent && colourDrop === colours[0].textContent && sizeDrop === sizes[0].textContent){
-        document.getElementById('stockInfo').innerHTML = temp(shoeList[6]);
-    } else if (shoeDrop === types[2].textContent && colourDrop === colours[1].textContent && sizeDrop === sizes[0].textContent){
-        document.getElementById('stockInfo').innerHTML = temp(shoeList[7]);
-    } else if (shoeDrop === types[2].textContent && colourDrop === colours[2].textContent && sizeDrop === sizes[0].textContent){
-        document.getElementById('stockInfo').innerHTML = temp(shoeList[8]);
-    } else {
-        document.getElementById('stockInfo').innerHTML = '<h1> No stock!!</h1>'
+    for(var i = 0; i < shoeList.length; i++) {
+        var shoeValue = shoeList[i];
+        if(shoeDrop === shoeValue.shoeType && colourDrop === shoeValue.shoeColour && sizeDrop === shoeValue.shoeSize) {
+            pushToThis.push(shoeList[i]);
+            document.getElementById('stockInfo').innerHTML = 
+            temp({newShoe: pushToThis})
+        }
     }
 }
 
-var stockAll = document.querySelector('.stockAll').innerHTML;
-var template = Handlebars.compile(stockAll);
-
 function showAllStock() {
-    document.getElementById('stockInfo').innerHTML = template({dataList: shoeList});
+    document.getElementById('stockInfo').innerHTML = temp({newShoe: shoeList});
 }
 
 var pushHere = [];
@@ -138,7 +122,7 @@ function addStock() {
                     shoeSize : newSize.value,
                     quantityInStock: newQuantity.value,
                     shoePrice : newPrice.value
-                    }
+                    };
     
     pushHere = newList;
     shoeList.push(pushHere);

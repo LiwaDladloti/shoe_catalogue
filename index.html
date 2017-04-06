@@ -17,28 +17,7 @@
                 <th>Quantity in stock</th>
                 <th>Shoe price</th>
             </thead>
-            
-            <tbody>
-                <td>{{shoeType}}</td>
-                <td>{{shoeColour}}</td>
-                <td>{{shoeSize}}</td>
-                <td>{{quantityInStock}}</td>
-                <td>{{shoePrice}}</td>
-            </tbody>
-            
-        </table>
-    </script>
-    
-    <script type="text/x-handlebars-template" class = 'stockAll'>
-        <table>
-            <thead>
-                <th>Shoe type</th>
-                <th>Shoe colour</th>
-                <th>Shoe size</th>
-                <th>Quantity in stock</th>
-                <th>Shoe price</th>
-            </thead>
-            {{#each dataList}}
+            {{#each newShoe}}
             <tbody>
                 <td>{{shoeType}}</td>
                 <td>{{shoeColour}}</td>
@@ -49,6 +28,7 @@
             {{/each}}
         </table>
     </script>
+    
     
 <div id = 'head'>
     <h1> LIWA MEN </h1>
@@ -69,7 +49,7 @@
     <h3>Select shoe type:</h3>
     <input type = 'text' list = 'brands' placeholder = 'Shoe type' id = 'shoeDrop'>
     <datalist id = 'brands'>
-    <option name = 'types'>Monk strap</option>
+    <option name = 'types'>Monk Strap</option>
     <option name = 'types'>Loafer</option>
     <option name = 'types'>Brogue & Wingtips</option>
     </datalist>
