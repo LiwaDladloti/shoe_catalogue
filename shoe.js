@@ -112,6 +112,11 @@ function stockUpdate() {
 }
 
 var pushHere = [];
+var stock = localStorage['stock'];
+var shoes = shoeList;
+if (stock){
+    shoes = JSON.parse(stock);
+}
 function addStock() {
     var newShoe = document.getElementById('newShoe');
     var newColour = document.getElementById('newColour');
@@ -129,4 +134,5 @@ function addStock() {
     
     pushHere = newList;
     shoeList.push(pushHere);
+    localStorage['stock'] = JSON.stringify(shoes);
 }
