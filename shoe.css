@@ -60,3 +60,19 @@ table {
 th, td {
     padding: 15px;
 }
+#addingStock {
+    background: radial-gradient(#222, white);
+    text-align: center;
+    margin-top: 2%;
+    padding-top: 1%;
+    padding-bottom: 2%;
+    display: none;
+}
+#btn {
+    margin-top: 2%;
+    text-align: center;
+}
+p {
+    font-size: 25px;
+    color: red;
+}

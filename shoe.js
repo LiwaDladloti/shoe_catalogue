@@ -83,10 +83,8 @@ function imgSlide() {
 
 var stockTemplate = document.querySelector('.stockTemplate').innerHTML;
 var temp = Handlebars.compile(stockTemplate);
-    
-var types = document.getElementsByName('types');
-var colours = document.getElementsByName('colours');
-var sizes = document.getElementsByName('sizes');
+
+
 function checkShoes() {
     
 var shoeDrop = document.getElementById('shoeDrop').value;
@@ -106,6 +104,11 @@ var pushToThis = [];
 
 function showAllStock() {
     document.getElementById('stockInfo').innerHTML = temp({newShoe: shoeList});
+}
+
+function stockUpdate() {
+    var stockDiv = document.getElementById('addingStock');       stockDiv.style.display = 'block';
+    alert('You must be a staff member to enter this section!')
 }
 
 var pushHere = [];
