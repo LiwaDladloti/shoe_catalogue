@@ -29,6 +29,15 @@
         </table>
     </script>
     
+    <script type = 'text/x-handlebars-template' class = 'dropDownTemplate'>
+        <input type = 'text' list = 'shoeStyle'>
+            {{#each style}}
+            <datalist id = 'shoeStyle'>
+                <option>{{shoeType}}</option>
+            </datalist>
+            {{/each}}
+    </script>
+    
     
 <div id = 'head'>
     <h1> LIWA MEN </h1>

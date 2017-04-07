@@ -67,6 +67,7 @@ var shoeList = [
         }
     ];
 
+
 function imgSlide() {
     'use strict';
     var mySlides = document.getElementsByClassName('slides');
@@ -98,6 +99,8 @@ var pushToThis = [];
             pushToThis.push(shoeList[i]);
             document.getElementById('stockInfo').innerHTML = 
             temp({newShoe: pushToThis})
+        } else if(shoeDrop !== shoeValue.shoeType && colourDrop !== shoeValue.shoeColour && sizeDrop !== shoeValue.shoeSize) {
+            document.getElementById('stockInfo').innerHTML = '<h1>Out of Stock!</h1>'
         }
     }
 }
@@ -112,11 +115,7 @@ function stockUpdate() {
 }
 
 var pushHere = [];
-var stock = localStorage['stock'];
-var shoes = shoeList;
-if (stock){
-    shoes = JSON.parse(stock);
-}
+
 function addStock() {
     var newShoe = document.getElementById('newShoe');
     var newColour = document.getElementById('newColour');
@@ -134,5 +133,4 @@ function addStock() {
     
     pushHere = newList;
     shoeList.push(pushHere);
-    localStorage['stock'] = JSON.stringify(shoes);
 }
